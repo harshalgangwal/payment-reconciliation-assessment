@@ -197,7 +197,7 @@ def _style_status(val):
     colour = "#2d7d46" if val == "PASS" else "#c0392b"
     return f"color: {colour}; font-weight: 600;"
 
-styled = test_summary.style.applymap(_style_status, subset=["status"])
+styled = test_summary.style.map(_style_status, subset=["status"])
 st.dataframe(styled, use_container_width=True, hide_index=True)
 
 st.divider()
