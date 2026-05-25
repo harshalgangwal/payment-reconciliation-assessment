@@ -120,6 +120,8 @@ def generate_bank_settlements(transactions: pd.DataFrame) -> pd.DataFrame:
 
     for _, txn in transactions.iterrows():
         txn_id = txn["transaction_id"]
+        if txn_id == "TXN-0010":
+            continue
 
         # ── Cross-month: settle 2 days after month end (April) ─────────────────
         if txn_id == CROSS_MONTH_TXN_ID:
